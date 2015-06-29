@@ -7,8 +7,43 @@ using namespace std;
 
 
 /******************************************************************
-				I have submitted this one. And got AC
+		I have submitted both of them one and got AC
 ******************************************************************/
+
+int main() 
+{
+	int totalDataSet, number, temp, count[10];
+	scanf("%d",&totalDataSet);
+	
+	while(totalDataSet != 0)
+	{
+		for(int i = 0;i < 10;i++)
+		{
+			count[i] = 0;
+		}
+
+		scanf("%d",&number);
+
+		for(int i = 1; i <= number;i++)
+		{
+			temp = i;
+			while(temp != 0)
+			{
+				count[temp % 10]++;
+				temp = temp / 10;
+			}
+		}
+		for(int i = 0;i < 9;i++)
+		{
+
+			printf("%d ", count[i]);
+		}
+
+		printf ("%d\n", count[9]);
+		totalDataSet--;
+	}
+    return 0;
+}
 
 //int main() 
 //{
@@ -53,40 +88,3 @@ using namespace std;
 //	}
 //    return 0;
 //}
-
-
-
-int main() 
-{
-	int totalDataSet, number, temp, count[10];
-	scanf("%d",&totalDataSet);
-	
-	while(totalDataSet != 0)
-	{
-		for(int i = 0;i < 10;i++)
-		{
-			count[i] = 0;
-		}
-
-		scanf("%d",&number);
-
-		for(int i = 1; i <= number;i++)
-		{
-			temp = i;
-			while(temp != 0)
-			{
-				count[temp % 10]++;
-				temp = temp / 10;
-			}
-		}
-		for(int i = 0;i < 9;i++)
-		{
-
-			printf("%d ", count[i]);
-		}
-
-		printf ("%d\n", count[9]);
-		totalDataSet--;
-	}
-    return 0;
-}
